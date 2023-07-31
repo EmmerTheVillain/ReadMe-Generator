@@ -31,6 +31,12 @@ const questions = [
             name: 'usage',
         },
         {
+          type: 'list',
+          message: 'Which license would you like to use?',
+          name: 'license',
+          choices: ['MIT License', 'GPLv3 license', 'GPLv2 license','Apache License'],
+        },
+        {
             type: 'input',
             message: 'Please provide a short description:',
             name: 'description',
