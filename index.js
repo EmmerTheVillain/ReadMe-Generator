@@ -40,7 +40,7 @@ const questions = [
         response.confirm === response.password
           ? console.log('Success!')
           : console.log('You forgot your password already?!')
-      );
+      )
 ];
 
 // TODO: Create a function to write README file
