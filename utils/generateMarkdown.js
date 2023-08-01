@@ -1,6 +1,6 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(questions.license) {
+function renderLicenseBadge(license) {
   let licenseBadge = license.license; // i think this is problem #1
   let licenseRender = ''
   if(licenseBadge === 'MIT') {
