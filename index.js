@@ -3,7 +3,7 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 
 // TODO: Create an array of questions for user input
-const questions = [
+// const questions = [
   inquirer
     .prompt([
         {
@@ -35,7 +35,7 @@ const questions = [
           type: 'list',
           message: 'Which license would you like to use?',
           name: 'license',
-          choices: ['MIT License', 'GPLv3 license', 'GPLv2 license','Apache License'],
+          choices: ['MIT', 'GPLv3', 'GPLv2','Apache'],
         },
         {
             type: 'input',
@@ -43,11 +43,15 @@ const questions = [
             name: 'description',
           },
       ])
-      .then((data) =>{
-        const filename = `${data.fileNameInput.toUpperCase().split(' ').join('')}`;
+      .then((data) => {
+        const filename = `${data.fileNameInput.toUpperCase().split(' ').join('')}.json`;
+    
+        fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
+          err ? console.log(err) : console.log('Success!')
+        );
 
       })
-];
+// ];
 // TODO: Create a function to write README file
 function writeToFile(filename, data) {
     fs.writeFile('/', content, err => {
