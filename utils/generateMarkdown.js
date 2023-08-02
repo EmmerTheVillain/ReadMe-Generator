@@ -1,6 +1,12 @@
+const fs = require('fs');
+const input = require('./input.json')
+
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
+  fs.readFile('input.json', 'utf8', (error, data) =>
+  error ? console.error(error) : console.log(data)
+);
   let licenseBadge = license.license; 
   let licenseRender = ''
   if(licenseBadge === 'MIT') {

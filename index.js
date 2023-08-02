@@ -44,9 +44,9 @@ const inquirer = require('inquirer');
           },
       ])
       .then((data) => {
-        const filename = `${data.fileNameInput.toUpperCase().split(' ').join('')}.json`;
+        // const filename = `${data.fileNameInput.toUpperCase().split(' ').join('')}.json`;
     
-        fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
+        fs.writeFile('input.json', JSON.stringify(data, null, '\t'), (err) =>
           err ? console.log(err) : console.log('Success!')
         );
 
@@ -64,6 +64,8 @@ function writeToFile(filename, data) {
 
 // TODO: Create a function to initialize app
 function init() {
+  const generateMarkdown = require('./utils/generateMarkdown.js');
+  generateMarkdown.generateMarkdown();
 }
 
 // Function call to initialize app
