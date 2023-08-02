@@ -34,13 +34,13 @@ function renderLicenseBadge(licenseRender) {
 function renderLicenseLink(licenseRender) {
   licenseRender.link = ''
   if(input.license === 'MIT') {
-    licenseRender.link = `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`
+    licenseRender.link = `https://opensource.org/license/mit/`
   } else if (input.license === 'GPLv3') {
-    licenseRender.link = `![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)`
+    licenseRender.link = `https://www.gnu.org/licenses/gpl-3.0.en.html`
   }else if (input.license === 'GPLv2') {
-    licenseRender.link = `![GPLv2 license](https://img.shields.io/badge/License-GPLv2-blue.svg)`
+    licenseRender.link = `https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html`
   } else if (licenseBadge === 'Apache') {
-    licenseRender.link = `![Apache license](https://img.shields.io/badge/License-Apache-orange.svg)`
+    licenseRender.link = `https://www.apache.org/licenses/LICENSE-2.0`
   } else {
     licenseRender.link = null;
   }
