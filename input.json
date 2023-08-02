@@ -1,8 +1,8 @@
 {
 	"fileNameInput": "name",
 	"projectTitle": "title",
-	"description": "description 2",
-	"installInstructions": "install 2",
-	"usage": "usage 2",
-	"license": "MIT"
+	"description": "description",
+	"installInstructions": "install instructions",
+	"usage": "usage",
+	"license": "Apache"
 }
