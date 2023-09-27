@@ -2,12 +2,10 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown.js');
-const path = require('path');
 
-// TODO: Create an array of questions for user input
-// const questions = [
-inquirer
-  .prompt([
+
+// array of questions for user input
+const questions = [
     {
       type: 'input',
       message: 'What is your project title?',
@@ -49,32 +47,25 @@ inquirer
       message: 'Enter Email address:',
       name: 'email',
     }
-])
+];
 //function to call generateMarkdown to create readme file
-function writeToFile(filename, answers){
-  const readmeRender = generateMarkdown(answers);
-  fs.writeFile(filename, readmeRender, (err) => {
-    if (err) {
-      console.error(err);
-    } else {
-      console.log(`README file '${filename}' has been created successfully at ${path.resolve(__dirname, fileName)}!`);
-      ;
-    }
-  });
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, (err) => err ? console.error(err) : console.log('README.md file generated!'));
 }
      
 
-// TODO: Create a function to initialize app
+// funciton to initialize app
 function init() {
   inquirer
     .prompt(questions)
     .then((answers) => {
-      writeToFile('README.md', answers);
+      const generate = generateMarkdown(answers);
+      writeToFile('README.md', generate);
     })
     .catch((error) => {
       console.error(error);
     });
 }
 
-// Function call to initialize app
+// call function call to initialize app
 init();
