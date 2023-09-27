@@ -41,7 +41,7 @@ function renderLicenseSection(license) {
   }else if (license === 'GPLv2') {
     return `This project uses the GPLv2 License.`
   } else if (license === 'Apache') {
-    lreturn`This project uses the Apache License.`
+    return`This project uses the Apache License.`
   } else {
     return 's';
 }
@@ -94,4 +94,4 @@ function generateMarkdown(data) {
   `;
 }
 
-module.exports = generateMarkdown(data);s
+module.exports = generateMarkdown(data);
