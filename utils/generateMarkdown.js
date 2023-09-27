@@ -55,8 +55,43 @@ function generateMarkdown(data) {
   const LicenseSection = renderLicenseSection(data.license);
   
   return  `# ${data.title}
-          ## license 
-          s`
+
+
+  ## Description
+  
+  ${data.description}
+  
+  ${licenseBadge}
+  ${licenseLink}s
+  
+  ## Installation
+  
+  ${data.installation}
+  
+  ## License
+  
+  ${LicenseSection}
+
+  ## Usage
+  
+  ${data.usage}
+  
+  
+  ## Contributing
+  
+  ${data.contributing}
+  
+  
+  ## Tests
+  
+  ${data.tests}
+  
+  
+  ## Questions
+  
+  If you have any questions: please visit (https://github.com/${data.github})
+  or contact me at ${data.email}
+  `;
 }
 
 module.exports = generateMarkdown(data);s
